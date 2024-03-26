@@ -139,12 +139,10 @@ done
 for aliases in \
     ~/.bash_aliases \
     "$HOME/.bash_aliases-$(hostname)" \
-    "$HOME/.bash_aliases-$(whoami)"; do
+    "$HOME/.bash_aliases-$(whoami)" \
+    "$HOME/.config/bash_aliases.d/"*.bash
+do
     [[ -f "$aliases" ]] && . "$aliases"
-done
-
-for aliases in "$HOME"/.config/bash_aliases.d/*.bash; do
-    . "$aliases"
 done
 
 # enable programmable completion features (you don't need to enable
