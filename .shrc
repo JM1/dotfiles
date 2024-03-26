@@ -1,0 +1,24 @@
+# 2020 Jakob Meng, <jakobmeng@web.de>
+#
+if [ -f "${HOME}/.shrc-$(hostname)" ]; then
+    . "${HOME}/.shrc-$(hostname)"
+fi
+
+if [ -f "${HOME}/.shrc-$(whoami)" ]; then
+    . "${HOME}/.shrc-$(whoami)"
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ]; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ]; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [ -d "/usr/lib/ccache" ]; then
+    PATH="/usr/lib/ccache:$PATH"
+fi
+

@@ -1,0 +1,22 @@
+# 2009-2021 Jakob Meng, <jakobmeng@web.de>
+# GNU screen configuration
+
+defscrollback 100000
+startup_message off
+
+# xterm is required to allow usage of arrow keys in Vi under GNU Screen,
+# but then aptitude is messed up. So instead of setting term variable
+# some additional configuration is added to .vimrc
+#term xterm-256color
+#term screen-256color
+
+# Solarized with GNU Screen
+# Ref.: https://github.com/altercation/solarized/issues/250
+#
+# terminfo and termcap for nice 256 color terminal
+# allow bold colors - necessary for some reason
+attrcolor b ".I"
+# tell screen how to set colors. AB = background, AF=foreground
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+# erase background with current bg color
+defbce "on"
