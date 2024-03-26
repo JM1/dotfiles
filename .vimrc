@@ -130,8 +130,10 @@ endif
 " enable line numbers
 set number
 
+" most terminals are dark by default
+set background=dark
+
 set wrap
-"set background=dark
 set list
 
 " enable true colors in the terminal
