@@ -8,6 +8,7 @@ fi
 
 update_oc() (
     set -euo pipefail
+    mkdir -p ~/.local/bin
     cd ~/.local/bin
     oc_tar_url="https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux.tar.gz"
     oc_tar_sha256_url="https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/sha256sum.txt"

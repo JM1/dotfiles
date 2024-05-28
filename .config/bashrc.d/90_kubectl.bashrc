@@ -8,6 +8,7 @@ fi
 
 update_kubectl() (
     set -euo pipefail
+    mkdir -p ~/.local/bin
     cd ~/.local/bin
     k8s_release=$(curl --silent --location https://dl.k8s.io/release/stable.txt)
     kubectl_base64=$(curl --silent --location "https://dl.k8s.io/release/$k8s_release/bin/linux/amd64/kubectl" | base64)
